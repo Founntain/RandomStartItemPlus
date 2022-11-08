@@ -106,188 +106,188 @@ mod:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, mod.SaveGame)
 if ModConfigMenu then
 
     function AnIndexOf(t,val)
-		for k,v in ipairs(t) do 
-			if v == val then return k end
-		end
+        for k,v in ipairs(t) do 
+            if v == val then return k end
+        end
 
-		return 1
-	end
+        return 1
+    end
 
     local sizes = {1, 2, 3}
-	ModConfigMenu.AddSetting("Random Start Item Plus", "General", {
-		Type = ModConfigMenu.OptionType.NUMBER,
-		CurrentSetting = function()
-			return AnIndexOf(sizes, config["NumberOfItems"])
-		end,
-		Minimum = 1,
-		Maximum = #sizes,
-		Display = function()
-			return "# of Items to Spawn: " .. config["NumberOfItems"]
-		end,
-		OnChange = function(currentNum)
-			config["NumberOfItems"] = sizes[currentNum]
-		end,
-	})
+    ModConfigMenu.AddSetting("Random Start Item Plus", "General", {
+        Type = ModConfigMenu.OptionType.NUMBER,
+        CurrentSetting = function()
+            return AnIndexOf(sizes, config["NumberOfItems"])
+        end,
+        Minimum = 1,
+        Maximum = #sizes,
+        Display = function()
+            return "# of Items to Spawn: " .. config["NumberOfItems"]
+        end,
+        OnChange = function(currentNum)
+            config["NumberOfItems"] = sizes[currentNum]
+        end,
+    })
 
     ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["TreasurePool"]
-		end,
-		Display = function()
-			local onOff = "False"
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["TreasurePool"]
+        end,
+        Display = function()
+            local onOff = "False"
 
-			if config["TreasurePool"] then
-				onOff = "True"
-			end
-			return "Use Treasure Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["TreasurePool"] = currentBool
-		end,
-	})
-
-    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["ShopPool"]
-		end,
-		Display = function()
-			local onOff = "False"
-
-			if config["ShopPool"] then
-				onOff = "True"
-			end
-			return "Use Shop Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["ShopPool"] = currentBool
-		end,
-	})
+            if config["TreasurePool"] then
+                onOff = "True"
+            end
+            return "Use Treasure Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["TreasurePool"] = currentBool
+        end,
+    })
 
     ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["BossPool"]
-		end,
-		Display = function()
-			local onOff = "False"
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["ShopPool"]
+        end,
+        Display = function()
+            local onOff = "False"
 
-			if config["BossPool"] then
-				onOff = "True"
-			end
-			return "Use Boss Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["BossPool"] = currentBool
-		end,
-	})
-
-    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["DevilPool"]
-		end,
-		Display = function()
-			local onOff = "False"
-
-			if config["DevilPool"] then
-				onOff = "True"
-			end
-			return "Use Devil Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["DevilPool"] = currentBool
-		end,
-	})
+            if config["ShopPool"] then
+                onOff = "True"
+            end
+            return "Use Shop Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["ShopPool"] = currentBool
+        end,
+    })
 
     ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["AngelPool"]
-		end,
-		Display = function()
-			local onOff = "False"
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["BossPool"]
+        end,
+        Display = function()
+            local onOff = "False"
 
-			if config["AngelPool"] then
-				onOff = "True"
-			end
-			return "Use Angel Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["AngelPool"] = currentBool
-		end,
-	})
-
-    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["SecretPool"]
-		end,
-		Display = function()
-			local onOff = "False"
-
-			if config["SecretPool"] then
-				onOff = "True"
-			end
-			return "Use Secret Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["SecretPool"] = currentBool
-		end,
-	})
+            if config["BossPool"] then
+                onOff = "True"
+            end
+            return "Use Boss Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["BossPool"] = currentBool
+        end,
+    })
 
     ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["LibraryPool"]
-		end,
-		Display = function()
-			local onOff = "False"
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["DevilPool"]
+        end,
+        Display = function()
+            local onOff = "False"
 
-			if config["LibraryPool"] then
-				onOff = "True"
-			end
-			return "Use Library Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["LibraryPool"] = currentBool
-		end,
-	})
-
-    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["UltraSecretPool"]
-		end,
-		Display = function()
-			local onOff = "False"
-
-			if config["UltraSecretPool"] then
-				onOff = "True"
-			end
-			return "Use Ultra Secret Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["UltraSecretPool"] = currentBool
-		end,
-	})
+            if config["DevilPool"] then
+                onOff = "True"
+            end
+            return "Use Devil Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["DevilPool"] = currentBool
+        end,
+    })
 
     ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
-		Type = ModConfigMenu.OptionType.BOOLEAN,
-		CurrentSetting = function()
-			return config["PlanetariumPool"]
-		end,
-		Display = function()
-			local onOff = "False"
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["AngelPool"]
+        end,
+        Display = function()
+            local onOff = "False"
 
-			if config["PlanetariumPool"] then
-				onOff = "True"
-			end
-			return "Use Planetarium Pool: " .. onOff
-		end,
-		OnChange = function(currentBool)
-			config["PlanetariumPool"] = currentBool
-		end,
-	})
+            if config["AngelPool"] then
+                onOff = "True"
+            end
+            return "Use Angel Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["AngelPool"] = currentBool
+        end,
+    })
+
+    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["SecretPool"]
+        end,
+        Display = function()
+            local onOff = "False"
+
+            if config["SecretPool"] then
+                onOff = "True"
+            end
+            return "Use Secret Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["SecretPool"] = currentBool
+        end,
+    })
+
+    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["LibraryPool"]
+        end,
+        Display = function()
+            local onOff = "False"
+
+            if config["LibraryPool"] then
+                onOff = "True"
+            end
+            return "Use Library Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["LibraryPool"] = currentBool
+        end,
+    })
+
+    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["UltraSecretPool"]
+        end,
+        Display = function()
+            local onOff = "False"
+
+            if config["UltraSecretPool"] then
+                onOff = "True"
+            end
+            return "Use Ultra Secret Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["UltraSecretPool"] = currentBool
+        end,
+    })
+
+    ModConfigMenu.AddSetting("Random Start Item Plus","Item Pools", {
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return config["PlanetariumPool"]
+        end,
+        Display = function()
+            local onOff = "False"
+
+            if config["PlanetariumPool"] then
+                onOff = "True"
+            end
+            return "Use Planetarium Pool: " .. onOff
+        end,
+        OnChange = function(currentBool)
+            config["PlanetariumPool"] = currentBool
+        end,
+    })
 end
